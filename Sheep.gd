@@ -20,6 +20,7 @@ func stop():
 
 func in_pen():
 	penned = true
+	$AnimatedSprite.hide()
 	stop()
 
 func _physics_process(_delta):
