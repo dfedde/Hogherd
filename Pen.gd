@@ -15,5 +15,5 @@ func _physics_process(_delta):
 				penned_sheep.append(body)
 				body.in_pen()
 				$Label.text = str(penned_sheep.size())
-	if penned_sheep.size() == 2:
-		emit_signal("all_penned")
+#	if penned_sheep.size() == 2:
+#		emit_signal("all_penned")
