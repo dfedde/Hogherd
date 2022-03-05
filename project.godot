@@ -15,13 +15,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Make A Game Fast"
+config/name="HogHerder"
 run/main_scene="res://Level_1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://global.gd"
 
 [editor_plugins]
 

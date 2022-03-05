@@ -14,7 +14,7 @@ func _ready():
 func set_motion(motion_):
 	motion = motion_
 
-func _process(delta):
+func _process(_delta):
 	if motion == Vector2():
 		playing = false
 	else:

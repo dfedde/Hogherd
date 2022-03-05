@@ -48,8 +48,8 @@ func run():
 	$Lines.set_previous_line(PoolVector2Array())
 	
 func reset():
-	Global.set_line(line)
-	get_tree().reload_current_scene()
+	get_node("/root/Global").set_line(line)
+	var _ok = get_tree().reload_current_scene()
 
 func sheeps():
 	return $Sheeps.get_children()

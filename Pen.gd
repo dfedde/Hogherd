@@ -8,7 +8,7 @@ signal all_penned
 var penned_sheep = []
 
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	for body in get_overlapping_bodies():
 		if body.get_parent().name == "Sheeps":
 			if penned_sheep.find(body) == -1:
