@@ -115,7 +115,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Sheep" type="CharacterBody2D"]
+[node name="Sheep" type="CharacterBody2D" groups=["Penable"]]
 position = Vector2(488, 144)
 script = ExtResource("1")
 

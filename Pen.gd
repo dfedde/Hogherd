@@ -10,8 +10,7 @@ var penned_sheep = []
 	
 func _physics_process(_delta):
 	for body in get_overlapping_bodies():
-		if body.get_parent().name == "Sheeps":
+		if body.is_in_group("Penable"):
 			if penned_sheep.find(body) == -1:
 				penned_sheep.append(body)
 				body.in_pen()
-				$Label.text = str(penned_sheep.size())

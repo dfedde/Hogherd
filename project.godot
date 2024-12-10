@@ -28,6 +28,11 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("todo")
 
+[global_group]
+
+Scary="anything a sheep would run away from"
+Penable="anything that can be put in a pen"
+
 [input]
 
 ui_cancel={
