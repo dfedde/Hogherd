@@ -1,11 +1,11 @@
-extends AnimatedSprite
+extends AnimatedSprite2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 var motion = Vector2()
-export (String) var start_animation = "RIGHT"
+@export var start_animation: String = "RIGHT"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,10 +15,9 @@ func set_motion(motion_):
 	motion = motion_
 
 func _process(_delta):
-	if motion == Vector2():
+	var playing = true
+	if motion == Vector2(): 
 		playing = false
-	else:
-		playing = true
 	var sprites = {
 	"DOWN": motion.angle_to(Vector2.UP),
 	"UP": motion.angle_to(Vector2.DOWN),

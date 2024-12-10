@@ -3,8 +3,8 @@ extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
-var line = PoolVector2Array()
-var previous_line = PoolVector2Array()
+var line = PackedVector2Array()
+var previous_line = PackedVector2Array()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,11 +12,9 @@ func _ready():
 
 func set_line(line_):
 	line = line_
-	update()
 
 func set_previous_line(previous_line_):
 	previous_line = previous_line_
-	update()
 	
 func _draw():
 	if line.size() > 1:
