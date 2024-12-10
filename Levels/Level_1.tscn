@@ -14,10 +14,10 @@ script = ExtResource("1_mitpd")
 
 [node name="Herd" type="Node" parent="."]
 
-[node name="Sheep" parent="Herd" groups=["Penable"] instance=ExtResource("2_qjf88")]
+[node name="Sheep" parent="Herd" instance=ExtResource("2_qjf88")]
 position = Vector2(288, 160)
 
-[node name="Sheep2" parent="Herd" groups=["Penable"] instance=ExtResource("2_qjf88")]
+[node name="Sheep2" parent="Herd" instance=ExtResource("2_qjf88")]
 position = Vector2(288, 240)
 
 [node name="Pig" parent="." groups=["Penable", "Scary"] instance=ExtResource("3_kdoj3")]

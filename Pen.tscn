@@ -5,3 +5,5 @@
 [node name="Pen" type="Area2D"]
 position = Vector2(816, 304)
 script = ExtResource("1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
