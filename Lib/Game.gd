@@ -5,10 +5,7 @@ var running = false
 var ran = false
 var started_line = false
 @onready var lines: Lines = $Lines
-@onready var line_manager := get_node("/root/LineManager")
 
-func _ready():
-	lines.previous_line = line_manager.get_line()
 
 func _input(_event):
 	#TODO: This could be refactered with a statemachine
@@ -27,7 +24,7 @@ func run():
 	
 func reset():
 	print("reset called")
-	line_manager.set_line(line)
+	lines.reset()
 	var _ok = get_tree().reload_current_scene()
 
 func sheeps():

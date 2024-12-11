@@ -1,6 +1,5 @@
 class_name Pig extends CharacterBody2D
 
-
 signal trace_compleate
 
 @export var speed: int = 250

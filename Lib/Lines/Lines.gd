@@ -1,5 +1,9 @@
 class_name Lines extends Node2D
+@onready var line_manager := get_node("/root/LineManager")
 
+func _ready():
+	previous_line = line_manager.get_line()
+	
 var line = PackedVector2Array(): 
 	set(new_value):
 		line = new_value
@@ -9,6 +13,9 @@ var previous_line = PackedVector2Array():
 	set(new_value):
 		previous_line = new_value
 		queue_redraw()
+		
+func reset():
+	line_manager.set_line(line)
 	
 func _draw():
 	if not line.is_empty():
