@@ -1,6 +1,5 @@
 class_name Lines extends Node2D
 
-
 var line = PackedVector2Array(): 
 	set(new_value):
 		line = new_value
@@ -12,7 +11,12 @@ var previous_line = PackedVector2Array():
 		queue_redraw()
 	
 func _draw():
-	if line.size() > 1:
+	if not line.is_empty():
 		draw_polyline(line, Color(1, 0.5, 0.5), 3, true)
-	if previous_line.size() > 1:
+	if not previous_line.is_empty():
 		draw_polyline(previous_line, Color(1, 0.5, 0.5, 0.5), 3, true)
+		
+func record_line():
+	line.append(get_global_mouse_position().snapped(Vector2.ONE))
+	queue_redraw()
+	return line
