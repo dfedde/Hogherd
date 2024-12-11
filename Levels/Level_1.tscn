@@ -31,7 +31,7 @@ position = Vector2(288, 160)
 [node name="Sheep2" parent="Herd" instance=ExtResource("2_qjf88")]
 position = Vector2(288, 240)
 
-[node name="Pig" parent="." groups=["Scary"] instance=ExtResource("3_kdoj3")]
+[node name="Pig" parent="." instance=ExtResource("3_kdoj3")]
 position = Vector2(136, 215)
 metadata/_edit_group_ = true
 

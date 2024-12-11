@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="HogHerder"
-run/main_scene="res://Levels/Level_1.tscn"
+run/main_scene="res://Lib/Menu/Menu.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.png"
 
 [autoload]
 
 LineManager="*res://Lib/Lines/LineManager.gd"
+LevelManager="*res://Lib/LevelManager/LevelManager.gd"
 
 [editor]
 

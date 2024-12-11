@@ -6,7 +6,12 @@ extends AnimatedSprite2D
 # var b = "text"
 var motion = Vector2()
 @export var start_animation: String = "RIGHT"
-
+var sprites = {
+	"DOWN": motion.angle_to(Vector2.UP),
+	"UP": motion.angle_to(Vector2.DOWN),
+	"RIGHT": motion.angle_to(Vector2.LEFT),
+	"LEFT": motion.angle_to(Vector2.RIGHT)
+	}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,14 +21,6 @@ func set_motion(motion_):
 
 func _process(_delta):
 	var playing = true
-	if motion == Vector2(): 
-		playing = false
-	var sprites = {
-	"DOWN": motion.angle_to(Vector2.UP),
-	"UP": motion.angle_to(Vector2.DOWN),
-	"RIGHT": motion.angle_to(Vector2.LEFT),
-	"LEFT": motion.angle_to(Vector2.RIGHT)
-	}
 	var lowest_key = start_animation
 	var lowest = sprites[lowest_key]
 	for key in sprites:
@@ -31,8 +28,4 @@ func _process(_delta):
 			lowest_key =  key
 			lowest = sprites[key]
 	animation = lowest_key
-#	print("UP: " + String(motion.angle_to(Vector2.UP)))
-#	print("DOWN: " + String(motion.angle_to(Vector2.DOWN)))
-#	print("LEFT: " + String(motion.angle_to(Vector2.LEFT)))
-#	print("RIGHT: " + String(motion.angle_to(Vector2.RIGHT)))
 	
