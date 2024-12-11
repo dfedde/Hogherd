@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://xqi58ubfsxko"]
+
+[ext_resource type="Theme" uid="uid://btyi5nyrlpg24" path="res://Lib/Menu/Menu_theme.tres" id="1_l48nx"]
+[ext_resource type="Script" path="res://Lib/Menu/quit.gd" id="2_va83x"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l48nx")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play
+"
+flat = true
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+flat = true
+script = ExtResource("2_va83x")
+
+[node name="LevelSelect" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Select
+"
+flat = true

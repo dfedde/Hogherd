@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wrtg832a81bj"
-path="res://.godot/imported/time_fantasy_fort_farm.png-931cfae1ecf68a4170e3056f934d9139.ctex"
+path="res://.godot/imported/time_fantasy_fort_farm.png-fe92f3ec1305f8dd79e3117b8491a0b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/time_fantasy_fort_farm.png"
-dest_files=["res://.godot/imported/time_fantasy_fort_farm.png-931cfae1ecf68a4170e3056f934d9139.ctex"]
+source_file="res://assets/terrain/time_fantasy_fort_farm.png"
+dest_files=["res://.godot/imported/time_fantasy_fort_farm.png-fe92f3ec1305f8dd79e3117b8491a0b5.ctex"]
 
 [params]
 

@@ -5,16 +5,10 @@ var running = false
 var ran = false
 var previous_line = PackedVector2Array()
 var started_line = false
-
-
+@onready var lines: Lines = $Lines
+@onready var line_manager := get_node("/root/LineManager")
 func _ready():
-	previous_line = get_node("/root/Global").get_line()
-
-func _draw():
-	if line.size() > 1:
-		draw_polyline(line, Color(1, 0.5, 0.5), 3, true)
-	if previous_line.size() > 1:
-		draw_polyline(previous_line, Color(0.5, 0.5, 0.5, 0.5), 3, true)
+	previous_line = line_manager.get_line()
 
 func _input(_event):
 	if not (running or ran):
@@ -29,14 +23,14 @@ func run():
 	$Pig.trace(line)
 	
 func reset():
-	get_node("/root/Global").set_line(line)
+	line_manager.set_line(line)
 	var _ok = get_tree().reload_current_scene()
 
 func sheeps():
 	return $Herd.get_children()
 	
 func record_line():
-	# only allow drawing when the not running 
+	# only allow drawing when the not running
 	if Input.is_action_pressed("down"):
 		started_line = true
 		line.append( get_global_mouse_position().snapped(Vector2.ONE))
@@ -44,6 +38,8 @@ func record_line():
 		
 	if Input.is_action_just_released("down") and started_line:
 		run()
+	lines.line= line
+	lines.previous_line = previous_line
 
 func _on_Pig_trace_compleate():
 	running = false

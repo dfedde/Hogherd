@@ -1,10 +1,5 @@
 extends Area2D
 
-
-signal all_penned
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var penned_sheep = []
 
 func _on_body_entered(body: Node2D) -> void:
