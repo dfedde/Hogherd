@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwjebyp0gyiji"]
+
+[sub_resource type="GDScript" id="GDScript_lbq5s"]
+
+[node name="PenRequirement" type="Node"]
+script = SubResource("GDScript_lbq5s")

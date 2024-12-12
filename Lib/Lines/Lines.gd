@@ -18,12 +18,14 @@ func reset():
 	line_manager.set_line(line)
 	
 func _draw():
-	if not line.is_empty():
+	if line.size() > 1:
 		draw_polyline(line, Color(1, 0.5, 0.5), 3, true)
-	if not previous_line.is_empty():
+	if previous_line.size() > 1:
 		draw_polyline(previous_line, Color(1, 0.5, 0.5, 0.5), 3, true)
 		
 func record_line():
-	line.append(get_global_mouse_position().snapped(Vector2.ONE))
+	var point := get_global_mouse_position().snapped(Vector2.ONE)
+	if line.is_empty() or (line[line.size()-1] - point).length() > 5:
+		line.append(point)
 	queue_redraw()
 	return line

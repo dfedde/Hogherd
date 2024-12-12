@@ -1,23 +1,26 @@
 extends Node2D
-
+enum {START, DRAWING, PLAYING, DONE}
+var STATE = START
 var line = PackedVector2Array()
-var running = false
-var ran = false
-var started_line = false
 @onready var lines: Lines = $Lines
 
+func _input(event):
+	match STATE:
+		START when event.is_action_pressed("down"):
+			STATE = DRAWING
+		DRAWING when event.is_action_released("down"):
+			run()
+		PLAYING when event.is_action_pressed("ui_cancel") or Input.is_action_pressed("down"):
+			reset()
+		DONE when event.is_action_pressed("ui_cancel") or Input.is_action_pressed("down"):
+			reset()
 
-func _input(_event):
-	#TODO: This could be refactered with a statemachine
-	if not (running or ran) and Input.is_action_pressed("down"):
+func _process(delta: float) -> void:
+	if STATE == DRAWING:
 		line = lines.record_line()
-	elif not (running or ran) and Input.is_action_just_released("down") and not line.is_empty():
-		run()
-	elif Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("down"):
-		reset()
-
+		
 func run():
-	running = true
+	STATE = PLAYING
 	for sheep in sheeps():
 		sheep.run($Pig)
 	$Pig.trace(line)
@@ -31,8 +34,7 @@ func sheeps():
 	return $Herd.get_children()
 
 func _on_Pig_trace_compleate():
-	running = false
-	ran = true
+	STATE = DONE
 
 func _on_Pen_all_penned():
 	print("all penned")

@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://cvvg4xj00p6j7"]
+[gd_scene load_steps=9 format=4 uid="uid://cvvg4xj00p6j7"]
 
 [ext_resource type="Script" path="res://Lib/Game.gd" id="1_mitpd"]
-[ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Sheep.tscn" id="2_qjf88"]
+[ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Penable/Sheep.tscn" id="2_qjf88"]
 [ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Pig.tscn" id="3_kdoj3"]
 [ext_resource type="PackedScene" uid="uid://bsjwfigmjt8xk" path="res://Components/Pen.tscn" id="4_ompjk"]
 [ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="5_u6x7i"]
 [ext_resource type="TileSet" uid="uid://0dwcjcg6qqt8" path="res://assets/terrain/terain.tres" id="6_ttgm2"]
+[ext_resource type="PackedScene" uid="uid://dl1dus1gingwl" path="res://Components/PenGoal.tscn" id="7_ny630"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojhds"]
 size = Vector2(202, 426.5)
@@ -40,5 +41,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pen"]
 position = Vector2(3, -2)
 shape = SubResource("RectangleShape2D_ojhds")
+
+[node name="PenGoal" parent="Pen" instance=ExtResource("7_ny630")]
 
 [editable path="Pen"]

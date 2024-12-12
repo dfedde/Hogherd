@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @export var speed: int = 200
 @export var max_dist: int = 300
+const ANIMAL_TYPE := AnimalData.Type.WHITE_SHEEP
 
-var start_position =  Vector2()
+var start_position = Vector2()
 var penned = false
 var flee_target: Pig
 
