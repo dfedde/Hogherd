@@ -116,7 +116,6 @@ animations = [{
 }]
 
 [node name="Sheep" type="CharacterBody2D" groups=["Penable"]]
-position = Vector2(488, 144)
 script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -127,6 +126,6 @@ shape = SubResource("1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("14")
-animation = &"RIGHT"
+animation = &"DOWN"
 offset = Vector2(0, -5)
 script = ExtResource("3")

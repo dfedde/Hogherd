@@ -10,9 +10,9 @@ func _input(event):
 			STATE = DRAWING
 		DRAWING when event.is_action_released("down"):
 			run()
-		PLAYING when event.is_action_pressed("ui_cancel") or Input.is_action_pressed("down"):
+		PLAYING when event.is_action_pressed("ui_cancel") or event.is_action_pressed("down"):
 			reset()
-		DONE when event.is_action_pressed("ui_cancel") or Input.is_action_pressed("down"):
+		DONE when event.is_action_pressed("ui_cancel") or event.is_action_pressed("down"):
 			reset()
 
 func _process(delta: float) -> void:
@@ -26,7 +26,6 @@ func run():
 	$Pig.trace(line)
 	
 func reset():
-	print("reset called")
 	lines.reset()
 	var _ok = get_tree().reload_current_scene()
 
@@ -36,5 +35,5 @@ func sheeps():
 func _on_Pig_trace_compleate():
 	STATE = DONE
 
-func _on_Pen_all_penned():
-	print("all penned")
+func _on_pen_all_penned() -> void:
+	get_tree().change_scene_to_packed(LevelManager.next_level())
