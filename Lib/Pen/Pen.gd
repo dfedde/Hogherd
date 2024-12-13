@@ -1,7 +1,7 @@
 class_name Pen extends Area2D
 
 signal all_penned
-#TODO: we don't need to re get goals every check it could be handled in _ready
+	
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Penable"):
 		meet_goal(body)
@@ -16,7 +16,6 @@ func get_goals():
 		if child is PenGoal:
 			childgoals.append(child)
 	return childgoals
-
 
 func get_unmet_goals():
 	var goals: Array[PenGoal]

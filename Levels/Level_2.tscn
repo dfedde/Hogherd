@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://kdkgfwqv6kpe"]
 
-[ext_resource type="Script" path="res://Lib/Game.gd" id="1_b3x05"]
+[ext_resource type="Script" path="res://Lib/GameManager/Game.gd" id="1_b3x05"]
 [ext_resource type="TileSet" uid="uid://0dwcjcg6qqt8" path="res://assets/terrain/terain.tres" id="2_xaets"]
 [ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="3_l1826"]
 [ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Penable/WhiteSheep.tscn" id="4_5wexr"]

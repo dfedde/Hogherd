@@ -35,5 +35,9 @@ func sheeps():
 func _on_Pig_trace_compleate():
 	STATE = DONE
 
-func _on_pen_all_penned() -> void:
+func change_to_next_level():
 	get_tree().change_scene_to_packed(LevelManager.next_level())
+	
+func _on_pen_all_penned() -> void:
+	call_deferred("change_to_next_level")
+	
