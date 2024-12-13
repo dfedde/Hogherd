@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba3tiibu3tcbc"]
+
+[ext_resource type="Texture2D" uid="uid://cblsknh2vdvqm" path="res://assets/congration.jpeg" id="1_kkuyg"]
+
+[node name="Win" type="Node2D"]
+
+[node name="Congration" type="Sprite2D" parent="."]
+position = Vector2(577.5, 323)
+scale = Vector2(4.37643, 3.38542)
+texture = ExtResource("1_kkuyg")
