@@ -20,8 +20,9 @@ func reset():
 func _draw():
 	if line.size() > 1:
 		draw_polyline(line, Color(1, 0.5, 0.5), 3, true)
-	if previous_line.size() > 1
+	if previous_line.size() > 1:
 		draw_polyline(previous_line, Color(0.5, 0.5, 1, 0.5), 3, true)
+	print(length(line)/12)
 		
 func record_line():
 	var point := get_global_mouse_position().snapped(Vector2.ONE)
@@ -29,3 +30,10 @@ func record_line():
 		line.append(point)
 	queue_redraw()
 	return line
+
+func length(aline: Array[Vector2]):
+	var distance: int = 0
+	for i in aline.size():
+		if aline.size() > i + 1:
+			distance += aline[i].distance_to(aline[i+1])
+	return distance

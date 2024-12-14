@@ -8,6 +8,7 @@ met_node = NodePath("sheep label")
 unmet_node = NodePath("Label")
 
 [node name="sheep label" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "sheep in"
