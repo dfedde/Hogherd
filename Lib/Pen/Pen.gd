@@ -1,15 +1,22 @@
 class_name Pen extends Area2D
+@onready var game_manger: GameManager = $".."
 
 signal all_penned
+	
+func _ready() -> void:
+	game_manger.register_pen(self)
 	
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Penable"):
 		meet_goal(body)
 		body.in_pen()
 		print(get_unmet_goals())
-		if get_unmet_goals().size() == 0:
+		if goals_met():
 			all_penned.emit()
-
+			
+func goals_met():
+	return get_unmet_goals().size() == 0
+		
 func get_goals():
 	var childgoals: Array[PenGoal]
 	for child in get_children():
