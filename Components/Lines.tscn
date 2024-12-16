@@ -6,9 +6,9 @@
 script = ExtResource("1_q8sre")
 
 [node name="CurrentLine" type="Line2D" parent="."]
-width = 2.0
+width = 3.0
 default_color = Color(1, 0, 0, 0.6)
 
 [node name="PreviousLine" type="Line2D" parent="."]
 width = 3.0
-default_color = Color(0, 0.290196, 1, 0.831373)
+default_color = Color(0, 0.290196, 1, 0.427451)
