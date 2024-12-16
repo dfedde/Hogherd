@@ -5,6 +5,6 @@
 [node name="Win" type="Node2D"]
 
 [node name="Congration" type="Sprite2D" parent="."]
-position = Vector2(577.5, 323)
-scale = Vector2(4.37643, 3.38542)
+position = Vector2(158, 240)
+scale = Vector2(1.12928, 1.25)
 texture = ExtResource("1_kkuyg")

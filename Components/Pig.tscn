@@ -1,72 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4ifqvdghiu1d"]
+[gd_scene load_steps=6 format=3 uid="uid://b4ifqvdghiu1d"]
 
 [ext_resource type="Script" path="res://Lib/Pig/Pig.gd" id="1"]
 [ext_resource type="Script" path="res://Lib/Sprite.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://bhbb3g84c75wr" path="res://assets/farmanimals.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://drbfrn37vss34" path="res://assets/Amber/pig.png" id="2_tbqrr"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 radius = 11.7524
 height = 23.5049
 
-[sub_resource type="AtlasTexture" id="11"]
-atlas = ExtResource("3")
-region = Rect2(0, 144, 42, 36)
-
-[sub_resource type="AtlasTexture" id="12"]
-atlas = ExtResource("3")
-region = Rect2(42, 144, 42, 36)
-
-[sub_resource type="AtlasTexture" id="13"]
-atlas = ExtResource("3")
-region = Rect2(84, 144, 42, 36)
-
-[sub_resource type="AtlasTexture" id="2"]
-atlas = ExtResource("3")
-region = Rect2(0, 180, 42, 36)
-
-[sub_resource type="AtlasTexture" id="3"]
-atlas = ExtResource("3")
-region = Rect2(42, 180, 42, 36)
-
-[sub_resource type="AtlasTexture" id="4"]
-atlas = ExtResource("3")
-region = Rect2(84, 180, 42, 36)
-
-[sub_resource type="AtlasTexture" id="5"]
-atlas = ExtResource("3")
-region = Rect2(0, 216, 42, 36)
-
-[sub_resource type="AtlasTexture" id="6"]
-atlas = ExtResource("3")
-region = Rect2(42, 216, 42, 36)
-
-[sub_resource type="AtlasTexture" id="7"]
-atlas = ExtResource("3")
-region = Rect2(84, 216, 42, 36)
-
-[sub_resource type="AtlasTexture" id="8"]
-atlas = ExtResource("3")
-region = Rect2(0, 252, 42, 36)
-
-[sub_resource type="AtlasTexture" id="9"]
-atlas = ExtResource("3")
-region = Rect2(42, 252, 42, 36)
-
-[sub_resource type="AtlasTexture" id="10"]
-atlas = ExtResource("3")
-region = Rect2(84, 252, 42, 36)
-
 [sub_resource type="SpriteFrames" id="14"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("11")
-}, {
-"duration": 1.0,
-"texture": SubResource("12")
-}, {
-"duration": 1.0,
-"texture": SubResource("13")
+"texture": ExtResource("2_tbqrr")
 }],
 "loop": true,
 "name": &"DOWN",
@@ -74,13 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("2")
-}, {
-"duration": 1.0,
-"texture": SubResource("3")
-}, {
-"duration": 1.0,
-"texture": SubResource("4")
+"texture": ExtResource("2_tbqrr")
 }],
 "loop": true,
 "name": &"LEFT",
@@ -88,13 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("5")
-}, {
-"duration": 1.0,
-"texture": SubResource("6")
-}, {
-"duration": 1.0,
-"texture": SubResource("7")
+"texture": ExtResource("2_tbqrr")
 }],
 "loop": true,
 "name": &"RIGHT",
@@ -102,13 +36,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("8")
-}, {
-"duration": 1.0,
-"texture": SubResource("9")
-}, {
-"duration": 1.0,
-"texture": SubResource("10")
+"texture": ExtResource("2_tbqrr")
 }],
 "loop": true,
 "name": &"UP",
@@ -123,8 +51,8 @@ rotation = 1.5708
 shape = SubResource("1")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -15)
-scale = Vector2(2, 2)
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("14")
-animation = &"RIGHT"
+animation = &"UP"
 script = ExtResource("2")

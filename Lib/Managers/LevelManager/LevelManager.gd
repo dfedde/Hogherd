@@ -3,6 +3,8 @@ extends Node
 var levels := [
 	"res://Levels/Level_1.tscn",
 	"res://Levels/Level_2.tscn",
+	"res://Levels/Level_3.tscn",
+	"res://Levels/Level_4.tscn",
 	"res://Levels/Win.tscn"
 ]
 var current_level_index := 0

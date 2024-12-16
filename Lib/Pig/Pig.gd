@@ -2,7 +2,7 @@ class_name Pig extends CharacterBody2D
 
 signal trace_compleate
 
-@export var speed: int = 200
+@export var speed: int = 150
 @export var curve_hold: int = 5
 
 var line = PackedVector2Array()

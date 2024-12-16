@@ -18,7 +18,17 @@ config/icon="res://icon.png"
 [autoload]
 
 LineManager="*res://Lib/Lines/LineManager.gd"
-LevelManager="*res://Lib/LevelManager/LevelManager.gd"
+LevelManager="*res://Lib/Managers/LevelManager/LevelManager.gd"
+PenManager="*res://Lib/Managers/PenManager/penManager.gd"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=480
+window/size/mode=2
+window/size/initial_screen=1
+window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [editor]
 

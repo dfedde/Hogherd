@@ -22,7 +22,7 @@ func _draw():
 		draw_polyline(line, Color(1, 0.5, 0.5), 3, true)
 	if previous_line.size() > 1:
 		draw_polyline(previous_line, Color(0.5, 0.5, 1, 0.5), 3, true)
-	print(length(line)/12)
+	print(length(line))
 		
 func record_line():
 	var point := get_global_mouse_position().snapped(Vector2.ONE)
