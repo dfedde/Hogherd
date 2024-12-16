@@ -16,7 +16,7 @@ func met_by(animal):
 	else:
 		return false
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if change:
 		match met:
 			true:
