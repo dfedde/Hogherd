@@ -1,35 +1,28 @@
 class_name Lines extends Node2D
 @onready var line_manager := get_node("/root/LineManager")
+@onready var current_line: Line2D = $CurrentLine
+@onready var previous_line: Line2D = $PreviousLine
 
 func _ready():
-	previous_line = line_manager.get_line()
-	
-var line = PackedVector2Array(): 
-	set(new_value):
-		line = new_value
-		queue_redraw()
-		
-var previous_line = PackedVector2Array():
-	set(new_value):
-		previous_line = new_value
-		queue_redraw()
-		
+	previous_line.points = line_manager.get_line()
+
 func reset():
-	line_manager.set_line(line)
+	line_manager.set_line(current_line.points)
 	
-func _draw():
-	if line.size() > 1:
-		draw_polyline(line, Color(1, 0.5, 0.5), 3, true)
-	if previous_line.size() > 1:
-		draw_polyline(previous_line, Color(0.5, 0.5, 1, 0.5), 3, true)
-	print(length(line))
+#func _draw():
+	#if line.size() > 1:
+		#draw_polyline(line, Color(1, 0.5, 0.5), 3, true)
+	#if previous_line.size() > 1:
+		#draw_polyline(previous_line, Color(0.5, 0.5, 1, 0.5), 3, true)
+	#print(length(line))
 		
 func record_line():
 	var point := get_global_mouse_position().snapped(Vector2.ONE)
-	if line.is_empty() or (line[line.size()-1] - point).length() > 5:
-		line.append(point)
+	var current_points = current_line.points
+	if current_points.is_empty() or (current_points[current_points.size()-1] - point).length() > 5:
+		current_line.add_point(point)
 	queue_redraw()
-	return line
+	return current_points
 
 func length(aline: Array[Vector2]):
 	var distance: int = 0
