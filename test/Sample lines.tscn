@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3233lmfkgg26"]
+
+[ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="1_i7mle"]
+
+[node name="SampleLines" type="Node2D"]
+
+[node name="Lines" parent="." instance=ExtResource("1_i7mle")]
+points = PackedVector2Array(0, 200, 60, 200, 100, 400, 150, 400)

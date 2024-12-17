@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://3il1nrnlmqt5"]
+
+[ext_resource type="Texture2D" uid="uid://b7kps5bbx0e57" path="res://assets/Line/DirtyLIne.png" id="1_f8ueo"]
+
+[node name="PreviousLine" type="Line2D"]
+texture_repeat = 2
+points = PackedVector2Array(14, 58, 112, 65, 227, 74, 272, 162, 281, 266, 198, 304, 107, 249, 134, 171, 160, 127, 92, 113, 47, 185, 40, 262)
+width = 30.0
+default_color = Color(0.233964, 0.119068, 0, 0.670588)
+texture = ExtResource("1_f8ueo")
+texture_mode = 1

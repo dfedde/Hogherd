@@ -2,9 +2,11 @@ class_name Lines extends Node2D
 @onready var line_manager := get_node("/root/LineManager")
 @onready var current_line: Line2D = $CurrentLine
 @onready var previous_line: Line2D = $PreviousLine
+@export var points: PackedVector2Array
 
 func _ready():
 	previous_line.points = line_manager.get_line()
+	current_line.points = points
 
 func reset():
 	line_manager.set_line(current_line.points)
@@ -17,9 +19,9 @@ func record_line():
 	queue_redraw()
 	return current_points
 
-func length(aline: Array[Vector2]):
+func length(points: Array[Vector2]):
 	var distance: int = 0
-	for i in aline.size():
-		if aline.size() > i + 1:
-			distance += aline[i].distance_to(aline[i+1])
+	for i in points.size():
+		if points.size() > i + 1:
+			distance += points[i].distance_to(points[i+1])
 	return distance
