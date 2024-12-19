@@ -4,7 +4,6 @@
 
 [node name="PreviousLine" type="Line2D"]
 texture_repeat = 2
-points = PackedVector2Array(14, 58, 109, 53, 227, 74, 272, 162, 281, 266, 198, 304, 107, 249, 134, 171, 160, 127, 92, 113, 47, 185, 40, 262)
 width = 30.0
 default_color = Color(1, 1, 1, 0.611765)
 texture = ExtResource("1_f8ueo")

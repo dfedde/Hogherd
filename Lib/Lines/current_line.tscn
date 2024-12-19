@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dixn57b1xilbj"]
+[gd_scene load_steps=3 format=3 uid="uid://b2gpg78k4w72l"]
 
-[ext_resource type="Material" uid="uid://dift4q6p5bya1" path="res://Lib/Lines/current_line.tres" id="1_f2arr"]
+[ext_resource type="Material" path="res://Lib/Lines/current_line.tres" id="1_f2arr"]
 [ext_resource type="Texture2D" uid="uid://cul5vcu05fim0" path="res://assets/Line/line.png" id="2_w7xjy"]
 
 [node name="CurrentLine" type="Line2D"]
 texture_repeat = 2
 material = ExtResource("1_f2arr")
-points = PackedVector2Array(32, 39, 105, 47, 222, 70, 230, 108, 222, 180, 201, 234, 117, 272, 70, 233, 76, 166, 91, 125, 141, 118, 163, 146, 153, 204)
 width = 20.0
 default_color = Color(1, 0, 0, 0.6)
 texture = ExtResource("2_w7xjy")
