@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ciq1c1hi0lc4w" path="res://Components/GameManager.tscn" id="1_mob12"]
 [ext_resource type="TileSet" uid="uid://0dwcjcg6qqt8" path="res://assets/terrain/terain.tres" id="2_xaets"]
 [ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="3_l1826"]
-[ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Lib/Sheep/WhiteSheep.tscn" id="4_5wexr"]
-[ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Pig.tscn" id="5_gl4h1"]
+[ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Animals/WhiteSheep.tscn" id="4_5wexr"]
+[ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Animals/Pig.tscn" id="5_gl4h1"]
 [ext_resource type="PackedScene" uid="uid://bsjwfigmjt8xk" path="res://Components/Pen.tscn" id="6_ol036"]
 [ext_resource type="PackedScene" uid="uid://b6avromv314w4" path="res://Components/goals/WhiteSheep.tscn" id="7_qi36n"]
 

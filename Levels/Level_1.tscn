@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=4 uid="uid://cvvg4xj00p6j7"]
 
 [ext_resource type="PackedScene" uid="uid://ciq1c1hi0lc4w" path="res://Components/GameManager.tscn" id="1_gnamt"]
-[ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Lib/Sheep/WhiteSheep.tscn" id="2_qjf88"]
-[ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Pig.tscn" id="3_kdoj3"]
+[ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Animals/WhiteSheep.tscn" id="2_qjf88"]
+[ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Animals/Pig.tscn" id="3_kdoj3"]
 [ext_resource type="PackedScene" uid="uid://bsjwfigmjt8xk" path="res://Components/Pen.tscn" id="4_ompjk"]
 [ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="5_u6x7i"]
 [ext_resource type="TileSet" uid="uid://0dwcjcg6qqt8" path="res://assets/terrain/terain.tres" id="6_ttgm2"]
