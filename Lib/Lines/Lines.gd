@@ -19,9 +19,9 @@ func record_line():
 	queue_redraw()
 	return current_points
 
-func length(points: Array[Vector2]):
+func length(line_points: Array[Vector2]):
 	var distance: int = 0
-	for i in points.size():
-		if points.size() > i + 1:
-			distance += points[i].distance_to(points[i+1])
+	for i in line_points.size():
+		if line_points.size() > i + 1:
+			distance += line_points[i].distance_to(line_points[i+1])
 	return distance

@@ -10,7 +10,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Penable"):
 		meet_goal(body)
 		body.in_pen()
-		print(get_unmet_goals())
 		if goals_met():
 			all_penned.emit()
 			
