@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dift4q6p5bya1"]
 
-[ext_resource type="Shader" path="res://Lib/Lines/Lines.gdshader" id="1_flyc0"]
+[ext_resource type="Shader" path="res://Lib/Lines/MovingLine.gdshader" id="1_flyc0"]
 
 [resource]
 shader = ExtResource("1_flyc0")

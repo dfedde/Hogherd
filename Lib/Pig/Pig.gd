@@ -13,7 +13,7 @@ func trace(line_):
 	line_index = 0
 
 func _physics_process(_delta):
-	$Sprite2D.set_motion(velocity)
+	#$Sprite2D.set_motion(velocity)
 	if !line:
 		return
 	# if target is closer than curve_hold pixels away move 
@@ -23,4 +23,5 @@ func _physics_process(_delta):
 		trace_compleate.emit()
 	else:
 		velocity = Vector2(speed,0).rotated(position.angle_to_point(line[line_index]))
+		rotation = velocity.angle()
 	move_and_slide()

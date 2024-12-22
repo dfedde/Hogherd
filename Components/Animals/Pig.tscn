@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4ifqvdghiu1d"]
+[gd_scene load_steps=8 format=3 uid="uid://b4ifqvdghiu1d"]
 
 [ext_resource type="Script" path="res://Lib/Pig/Pig.gd" id="1"]
 [ext_resource type="Script" path="res://Lib/Sprite.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://drbfrn37vss34" path="res://assets/Amber/pig.png" id="2_tbqrr"]
+[ext_resource type="Texture2D" uid="uid://d4euv4c62igyf" path="res://assets/Amber/pigback.png" id="3_pjpmx"]
+[ext_resource type="Texture2D" uid="uid://crekajgqmc3tb" path="res://assets/Amber/pig-right.png" id="3_xsjvo"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 radius = 11.7524
@@ -28,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_tbqrr")
+"texture": ExtResource("3_xsjvo")
 }],
 "loop": true,
 "name": &"RIGHT",
@@ -36,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_tbqrr")
+"texture": ExtResource("3_pjpmx")
 }],
 "loop": true,
 "name": &"UP",

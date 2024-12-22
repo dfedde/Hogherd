@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2gpg78k4w72l"]
 
-[ext_resource type="Material" path="res://Lib/Lines/current_line.tres" id="1_f2arr"]
+[ext_resource type="Material" uid="uid://dift4q6p5bya1" path="res://Lib/Lines/current_line.tres" id="1_f2arr"]
 [ext_resource type="Texture2D" uid="uid://cul5vcu05fim0" path="res://assets/Line/line.png" id="2_w7xjy"]
 
 [node name="CurrentLine" type="Line2D"]
