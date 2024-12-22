@@ -7,6 +7,7 @@ signal trace_compleate
 
 var line = PackedVector2Array()
 var line_index = 0
+var _last_position = Vector2()
 	
 func trace(line_):
 	line = line_
@@ -18,10 +19,12 @@ func _physics_process(_delta):
 		return
 	# if target is closer than curve_hold pixels away move 
 	if position.distance_to(line[line_index]) < curve_hold: line_index += 1
+	if position.snapped(Vector2.ONE) == _last_position.snapped(Vector2.ONE): line_index += 1
 	if line_index >= line.size():
 		line = null
 		trace_compleate.emit()
 	else:
 		velocity = Vector2(speed,0).rotated(position.angle_to_point(line[line_index]))
 		rotation = velocity.angle()
+	_last_position = position
 	move_and_slide()
