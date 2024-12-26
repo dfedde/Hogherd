@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 func run():
 	STATE = PLAYING
 	for sheep in sheeps():
-		sheep.run($Pig)
+		sheep.run()
 	$Pig.trace(line)
 	
 func reset():
