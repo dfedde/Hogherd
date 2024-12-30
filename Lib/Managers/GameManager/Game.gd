@@ -25,16 +25,12 @@ func _process(_delta: float) -> void:
 		
 func run():
 	STATE = PLAYING
-	for sheep in sheeps():
-		sheep.run()
+	get_tree().call_group("Penable", "run")
 	$Pig.trace(line)
 	
 func reset():
 	lines.reset()
 	var _ok = get_tree().reload_current_scene()
-
-func sheeps():
-	return $Herd.get_children()
 
 func _on_Pig_trace_compleate():
 	STATE = DONE

@@ -6,7 +6,6 @@
 
 [sub_resource type="CapsuleShape2D" id="1"]
 radius = 14.0
-height = 30.0
 
 [sub_resource type="SpriteFrames" id="14"]
 animations = [{
@@ -45,6 +44,8 @@ animations = [{
 
 [node name="Sheep" type="CharacterBody2D" groups=["Penable"]]
 script = ExtResource("1")
+max_dist = 200
+debug = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -0.5)
