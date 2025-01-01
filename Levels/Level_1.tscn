@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvvg4xj00p6j7"]
+[gd_scene load_steps=9 format=3 uid="uid://cvvg4xj00p6j7"]
 
 [ext_resource type="PackedScene" uid="uid://ciq1c1hi0lc4w" path="res://Components/GameManager.tscn" id="1_gnamt"]
 [ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Animals/WhiteSheep.tscn" id="2_qjf88"]
 [ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Animals/Pig.tscn" id="3_kdoj3"]
 [ext_resource type="PackedScene" uid="uid://bsjwfigmjt8xk" path="res://Components/Pen.tscn" id="4_ompjk"]
 [ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="5_u6x7i"]
+[ext_resource type="PackedScene" uid="uid://bv371khncwvtc" path="res://Components/WiggleCam.tscn" id="7_f6grt"]
 [ext_resource type="PackedScene" uid="uid://b6avromv314w4" path="res://Components/goals/WhiteSheep.tscn" id="7_r8dxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojhds"]
@@ -34,6 +35,9 @@ shape = SubResource("RectangleShape2D_ojhds")
 [node name="WhiteSheepGoal1" parent="GameManger/Pen" instance=ExtResource("7_r8dxi")]
 position = Vector2(-787, 127)
 
+[node name="Camera2D" parent="." instance=ExtResource("7_f6grt")]
+
 [connection signal="all_penned" from="GameManger/Pen" to="GameManger" method="_on_pen_all_penned"]
 
 [editable path="GameManger/Pen"]
+[editable path="Camera2D"]

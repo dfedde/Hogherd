@@ -15,6 +15,7 @@ size = Vector2(302, 42)
 [node name="GameManger" parent="." instance=ExtResource("1_mob12")]
 
 [node name="Lines" parent="GameManger" instance=ExtResource("3_l1826")]
+points = null
 
 [node name="Herd" type="Node" parent="GameManger"]
 

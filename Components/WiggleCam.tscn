@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv371khncwvtc"]
+
+[ext_resource type="Shader" path="res://Lib/Shaders/wobble.gdshader" id="1_qwv4b"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iy6vr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p681o"]
+seamless = true
+seamless_blend_skirt = 0.15
+as_normal_map = true
+bump_strength = 2.6
+noise = SubResource("FastNoiseLite_iy6vr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jhnql"]
+shader = ExtResource("1_qwv4b")
+shader_parameter/strength = 0.05
+shader_parameter/speed = 2.0
+shader_parameter/frames = 2
+shader_parameter/flowMap = SubResource("NoiseTexture2D_p681o")
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(161, 240)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_jhnql")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
