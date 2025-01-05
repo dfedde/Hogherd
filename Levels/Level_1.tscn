@@ -37,6 +37,9 @@ position = Vector2(-787, 127)
 
 [node name="Camera2D" parent="." instance=ExtResource("7_f6grt")]
 
+[node name="ColorRect" parent="Camera2D/CanvasLayer" index="0"]
+visible = false
+
 [connection signal="all_penned" from="GameManger/Pen" to="GameManger" method="_on_pen_all_penned"]
 
 [editable path="GameManger/Pen"]
