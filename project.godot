@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 
 LineManager="*res://Lib/Lines/LineManager.gd"
 LevelManager="*res://Lib/Managers/LevelManager/LevelManager.gd"
+PigManager="*res://Lib/Managers/PigManager.gd"
 
 [display]
 

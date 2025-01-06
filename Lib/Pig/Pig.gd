@@ -10,7 +10,10 @@ signal trace_compleate
 var line = PackedVector2Array()
 var line_index = 0
 @onready var _last_position = position
-	
+
+func _ready() -> void:
+	energy = PigManager.energy
+
 func trace(line_):
 	line = line_
 	line_index = 0
@@ -29,6 +32,7 @@ func handle_line_following():
 		velocity = Vector2(speed,0).rotated(position.angle_to_point(line[line_index]))
 		rotation = velocity.angle()
 		energy -= position.distance_to(_last_position)/drain_factor
+		PigManager.energy = energy
 		
 func _physics_process(_delta):
 	handle_line_following()
