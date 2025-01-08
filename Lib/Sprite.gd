@@ -21,7 +21,6 @@ func _process(_delta):
 	"RIGHT": motion.angle_to(Vector2.LEFT),
 	"LEFT": motion.angle_to(Vector2.RIGHT)
 	}
-	var playing = true
 	var lowest_key = start_animation
 	var lowest = sprites[lowest_key]
 	for key in sprites:

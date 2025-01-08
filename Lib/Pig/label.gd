@@ -1,5 +1,5 @@
 extends Label
 @onready var pig: Pig = $".."
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	text = "%.0f" % [pig.energy]

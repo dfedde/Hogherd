@@ -24,6 +24,7 @@ tile_set = ExtResource("2_gi6a5")
 [node name="GameManger" parent="." instance=ExtResource("1_gnamt")]
 
 [node name="Lines" parent="GameManger" instance=ExtResource("5_u6x7i")]
+points = PackedVector2Array()
 
 [node name="Herd" type="Node" parent="GameManger"]
 

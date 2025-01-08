@@ -6,7 +6,6 @@
 
 [node name="Lines" type="Node2D"]
 script = ExtResource("1_q8sre")
-points = null
 
 [node name="PreviousLine" parent="." instance=ExtResource("3_8vqyu")]
 

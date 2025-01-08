@@ -20,7 +20,7 @@ func record_line():
 	return current_points
 
 func length(line_points: Array[Vector2]):
-	var distance: int = 0
+	var distance: float = 0
 	for i in line_points.size():
 		if line_points.size() > i + 1:
 			distance += line_points[i].distance_to(line_points[i+1])
