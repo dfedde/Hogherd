@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4ifqvdghiu1d"]
+[gd_scene load_steps=12 format=3 uid="uid://b4ifqvdghiu1d"]
 
 [ext_resource type="Script" path="res://Lib/Pig/Pig.gd" id="1"]
-[ext_resource type="Script" path="res://Lib/Sprite.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://drbfrn37vss34" path="res://assets/Amber/pig.png" id="2_tbqrr"]
 [ext_resource type="Texture2D" uid="uid://d4euv4c62igyf" path="res://assets/Amber/pigback.png" id="3_pjpmx"]
 [ext_resource type="Texture2D" uid="uid://crekajgqmc3tb" path="res://assets/Amber/pig-right.png" id="3_xsjvo"]
@@ -50,6 +49,67 @@ animations = [{
 font_color = Color(0, 0, 0, 1)
 outline_size = 4
 
+[sub_resource type="Animation" id="Animation_p3s0x"]
+resource_name = "Walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -4), Vector2(5, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.33266, 0.324156]
+}
+
+[sub_resource type="Animation" id="Animation_shbng"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gwofk"]
+_data = {
+"RESET": SubResource("Animation_shbng"),
+"Walk": SubResource("Animation_p3s0x")
+}
+
 [node name="Pig" type="CharacterBody2D" groups=["Scary"]]
 script = ExtResource("1")
 
@@ -58,18 +118,22 @@ rotation = 1.5708
 shape = SubResource("1")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1.90735e-06)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("14")
-animation = &"RIGHT"
-script = ExtResource("2")
+animation = &"DOWN"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -27.0
-offset_top = -11.0
-offset_right = 1.0
-offset_bottom = 12.0
+offset_left = 11.0
+offset_top = -26.0
+offset_right = 39.0
+offset_bottom = -3.0
+rotation = 1.5708
 text = "100"
 label_settings = SubResource("LabelSettings_eqxdu")
 horizontal_alignment = 1
 script = ExtResource("6_8gy4k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gwofk")
+}

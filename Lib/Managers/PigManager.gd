@@ -2,6 +2,7 @@ extends Node
 
 @export var max_energy: int = 100
 @export var energy: float
+@export var money: int
 const LEVEL_OVER_OVERLAY = preload("res://Lib/LevelOverOverlay.tscn")
 
 func _ready() -> void:

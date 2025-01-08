@@ -5,7 +5,7 @@ signal out_of_energy
 
 @export var speed: int = 150
 @export var curve_hold: int = 5
-@export var energy: float = 100
+var energy: float
 @export var drain_factor: int = 10
 
 var following := false
@@ -13,6 +13,7 @@ var following := false
 var line = PackedVector2Array()
 var line_index = 0
 @onready var _last_position = position
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	PigManager.register(self)
@@ -36,9 +37,11 @@ func handle_line_following():
 	if line_index >= line.size():
 		stop()
 		trace_compleate.emit()
+		animation_player.play("RESET")
 	else:
+		animation_player.play("Walk")
 		velocity = Vector2(speed,0).rotated(position.angle_to_point(line[line_index]))
-		rotation = velocity.angle()
+		rotation = velocity.angle() - TAU/4
 		energy -= position.distance_to(_last_position)/drain_factor
 		PigManager.energy = energy
 
