@@ -41,7 +41,7 @@ func handle_line_following():
 	else:
 		animation_player.play("Walk")
 		velocity = Vector2(speed,0).rotated(position.angle_to_point(line[line_index]))
-		rotation = velocity.angle() - TAU/4
+		#rotation = velocity.angle() - TAU/4
 		energy -= position.distance_to(_last_position)/drain_factor
 		PigManager.energy = energy
 
