@@ -41,9 +41,7 @@ position = Vector2(27, 441)
 
 [node name="WobbleCam" parent="." instance=ExtResource("7_f6grt")]
 
-[node name="ColorRect" parent="WobbleCam/CanvasLayer" index="0"]
-visible = false
-
+[connection signal="out_of_energy" from="GameManger/Pig" to="GameManger" method="_on_pig_out_of_energy"]
 [connection signal="all_penned" from="GameManger/Pen" to="GameManger" method="_on_pen_all_penned"]
 
 [editable path="GameManger/Pen"]

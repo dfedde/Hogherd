@@ -48,6 +48,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_eqxdu"]
 font_color = Color(0, 0, 0, 1)
+outline_size = 4
 
 [node name="Pig" type="CharacterBody2D" groups=["Scary"]]
 script = ExtResource("1")
@@ -64,10 +65,10 @@ animation = &"RIGHT"
 script = ExtResource("2")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -23.0
-offset_top = -12.0
-offset_right = 5.0
-offset_bottom = 11.0
+offset_left = -27.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
 text = "100"
 label_settings = SubResource("LabelSettings_eqxdu")
 horizontal_alignment = 1
