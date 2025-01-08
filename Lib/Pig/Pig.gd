@@ -15,9 +15,8 @@ var line_index = 0
 @onready var _last_position = position
 
 func _ready() -> void:
-	
+	PigManager.register(self)
 	energy = PigManager.energy
-	print("help")
 
 func trace(line_):
 	following = true

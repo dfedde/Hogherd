@@ -44,13 +44,7 @@ func all_pens_filled():
 func change_to_next_level():
 	get_tree().change_scene_to_packed(LevelManager.next_level())
 	
-func change_to_shop():
-	get_tree().change_scene_to_packed(LevelManager.shop())
-	
 func _on_pen_all_penned() -> void:
 	if all_pens_filled():
 		call_deferred("change_to_next_level")
 		
-func _on_pig_out_of_energy() -> void:
-	PigManager.reset()
-	call_deferred("change_to_shop")

@@ -26,7 +26,6 @@ func _process(_delta):
 	var lowest = sprites[lowest_key]
 	for key in sprites:
 		if sprites[key] < lowest:
-			print(key)
 			lowest_key = key
 			lowest = sprites[key]
 	animation = lowest_key
