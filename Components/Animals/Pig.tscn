@@ -123,6 +123,7 @@ sprite_frames = SubResource("14")
 animation = &"DOWN"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 11.0
 offset_top = -26.0
 offset_right = 39.0

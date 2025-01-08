@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvvg4xj00p6j7"]
+[gd_scene load_steps=13 format=3 uid="uid://cvvg4xj00p6j7"]
 
 [ext_resource type="PackedScene" uid="uid://ciq1c1hi0lc4w" path="res://Components/GameManager.tscn" id="1_gnamt"]
 [ext_resource type="PackedScene" uid="uid://cb2ik4qw4fhll" path="res://Components/fences.tscn" id="2_egk5b"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bv371khncwvtc" path="res://Components/WiggleCam.tscn" id="7_f6grt"]
 [ext_resource type="PackedScene" uid="uid://b6avromv314w4" path="res://Components/goals/WhiteSheep.tscn" id="7_r8dxi"]
 [ext_resource type="PackedScene" uid="uid://b3o4y7jre3svo" path="res://Components/Backgrounds/Grass.tscn" id="7_tiuoj"]
+[ext_resource type="Script" path="res://Lib/EnergyBar.gd" id="10_culg7"]
+[ext_resource type="Theme" uid="uid://b43gq833cp4i1" path="res://Lib/EnergyBar.tres" id="10_nnft6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojhds"]
 size = Vector2(302, 42)
@@ -43,6 +45,34 @@ shape = SubResource("RectangleShape2D_ojhds")
 position = Vector2(27, 441)
 
 [node name="WobbleCam" parent="." instance=ExtResource("7_f6grt")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 15
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme = ExtResource("10_nnft6")
+value = 50.0
+show_percentage = false
+script = ExtResource("10_culg7")
 
 [connection signal="out_of_energy" from="GameManger/Pig" to="GameManger" method="_on_pig_out_of_energy"]
 [connection signal="all_penned" from="GameManger/Pen" to="GameManger" method="_on_pen_all_penned"]
