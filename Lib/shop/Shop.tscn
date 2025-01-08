@@ -21,6 +21,19 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MoneyLable" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Money:"
+
+[node name="Money" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "100"
+
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Store more energy"
@@ -29,9 +42,13 @@ script = ExtResource("1_tit4g")
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "make more money"
+script = ExtResource("1_tit4g")
 
 [node name="Button3" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "use less energy"
+script = ExtResource("1_tit4g")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="CenterContainer/VBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button3" to="CenterContainer/VBoxContainer/Button3" method="_on_pressed"]

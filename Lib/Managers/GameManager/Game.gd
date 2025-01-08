@@ -14,10 +14,6 @@ func _input(event):
 			STATE = DRAWING
 		DRAWING when event.is_action_released("down"):
 			run()
-		PLAYING when event.is_action_pressed("ui_cancel") or event.is_action_pressed("down"):
-			reset()
-		DONE when event.is_action_pressed("ui_cancel") or event.is_action_pressed("down"):
-			reset()
 
 func _process(_delta: float) -> void:
 	if STATE == DRAWING:
@@ -27,24 +23,14 @@ func run():
 	STATE = PLAYING
 	get_tree().call_group("Penable", "run")
 	$Pig.trace(line)
-	
+
 func reset():
 	lines.reset()
 	var _ok = get_tree().reload_current_scene()
-
-func _on_Pig_trace_compleate():
-	STATE = DONE
 	
 func all_pens_filled():
 	var filled = true
 	for pen in pens:
 		filled = pen.goals_met() and filled
 	return filled
-	
-func change_to_next_level():
-	get_tree().change_scene_to_packed(LevelManager.next_level())
-	
-func _on_pen_all_penned() -> void:
-	if all_pens_filled():
-		call_deferred("change_to_next_level")
 		

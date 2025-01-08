@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=4 uid="uid://ctlbj8joguham"]
+
+[ext_resource type="PackedScene" uid="uid://b3o4y7jre3svo" path="res://Components/Backgrounds/Grass.tscn" id="1_0apqp"]
+[ext_resource type="PackedScene" uid="uid://cb2ik4qw4fhll" path="res://Components/fences.tscn" id="2_3id8l"]
+[ext_resource type="PackedScene" uid="uid://ciq1c1hi0lc4w" path="res://Components/GameManager.tscn" id="2_wls3o"]
+[ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="3_leu0e"]
+[ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Animals/WhiteSheep.tscn" id="4_wpv8r"]
+[ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Animals/Pig.tscn" id="5_clcp8"]
+[ext_resource type="PackedScene" uid="uid://bsjwfigmjt8xk" path="res://Components/Pen.tscn" id="6_tt25l"]
+[ext_resource type="PackedScene" uid="uid://b6avromv314w4" path="res://Components/goals/WhiteSheep.tscn" id="7_in5fj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojhds"]
+size = Vector2(124, 42)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Grass" parent="." instance=ExtResource("1_0apqp")]
+
+[node name="Fence" parent="." instance=ExtResource("2_3id8l")]
+tile_map_data = PackedByteArray("AAATAAAAAAAEABYAAAATAAEAAAABABcAAAATAAIAAAABABcAAAATAAMAAAABABcAAAATAAQAAAABABcAAAATAAUAAAABABcAAAATAAYAAAABABcAAAATAAcAAAABABcAAAATAAgAAAABABcAAAATAAkAAAABABcAAAATAAoAAAABABcAAAATAAsAAAABABcAAAATAAwAAAABABcAAAATAA0AAAABABcAAAATAA4AAAABABcAAAATAA8AAAABABcAAAATABAAAAABABcAAAATABEAAAABABcAAAATABIAAAABABcAAAATABMAAAABABcAAAATABQAAAABABcAAAATABUAAAABABcAAAATABYAAAABABcAAAATABcAAAABABcAAAATABgAAAABABcAAAATABkAAAABABcAAAATABoAAAABABcAAAATABsAAAABABcAAAATABwAAAABABcAAAATAB0AAAAFABQAAAAAAAAAAAABABYAAAABAAAAAAABABUAAAACAAAAAAADABQAAAADAAAAAAABABUAAAAEAAAAAAADABQAAAAFAAAAAAACABYAAAAGAAAAAAABABUAAAAHAAAAAAABABUAAAAIAAAAAAADABQAAAAJAAAAAAADABQAAAAKAAAAAAADABQAAAALAAAAAAABABUAAAAMAAAAAAABABUAAAANAAAAAAADABQAAAAOAAAAAAABABUAAAAPAAAAAAADABQAAAAQAAAAAAABABUAAAARAAAAAAADABQAAAASAAAAAAADABQAAAAAAB0AAAACABQAAAAAABwAAAABABcAAAAAABsAAAABABcAAAAAABoAAAABABcAAAAAABkAAAABABcAAAAAABgAAAABABcAAAAAABcAAAABABcAAAAAABYAAAABABcAAAAAABUAAAABABcAAAAAABQAAAABABcAAAAAABMAAAABABcAAAAAABIAAAABABcAAAAAABEAAAABABcAAAAAABAAAAABABcAAAAAAA8AAAABABcAAAAAAA4AAAABABcAAAAAAA0AAAABABcAAAAAAAwAAAABABcAAAAAAAsAAAABABcAAAAAAAoAAAABABcAAAAAAAkAAAABABcAAAAAAAgAAAABABcAAAAAAAcAAAABABcAAAAAAAYAAAABABcAAAAAAAUAAAABABcAAAAAAAQAAAABABcAAAAAAAMAAAABABcAAAAAAAIAAAABABcAAAAAAAEAAAABABcAAAASAB0AAAADABQAAAARAB0AAAADABQAAAAQAB0AAAADABQAAAAPAB0AAAADABQAAAAOAB0AAAABABUAAAANAB0AAAABABUAAAAMAB0AAAABABUAAAALAB0AAAADABQAAAAKAB0AAAABABUAAAAJAB0AAAADABQAAAAIAB0AAAADABQAAAAHAB0AAAADABQAAAAGAB0AAAADABQAAAAFAB0AAAADABQAAAAEAB0AAAABABUAAAADAB0AAAADABQAAAACAB0AAAABABUAAAABAB0AAAADABQAAAANAAgAAAAEABYAAAAMAAgAAAADABQAAAALAAgAAAADABQAAAAKAAgAAAADABYAAAAJAAgAAAACABYAAAAIAAgAAAABABUAAAAHAAgAAAADABQAAAAGAAgAAAACABQAAAAKABUAAAABABkAAAAKABQAAAABABcAAAAKABMAAAABABcAAAAKABIAAAABABcAAAAKABEAAAABABcAAAAKABAAAAABABcAAAAKAA8AAAABABcAAAAKAA4AAAABABcAAAAKAA0AAAABABcAAAAKAAwAAAABABcAAAAKAAsAAAABABcAAAAKAAoAAAABABcAAAAKAAkAAAABABcAAAA=")
+
+[node name="GameManger" parent="." instance=ExtResource("2_wls3o")]
+
+[node name="Lines" parent="GameManger" instance=ExtResource("3_leu0e")]
+points = null
+
+[node name="Herd" type="Node" parent="GameManger"]
+
+[node name="Sheep" parent="GameManger/Herd" instance=ExtResource("4_wpv8r")]
+position = Vector2(87, 317)
+
+[node name="Sheep2" parent="GameManger/Herd" instance=ExtResource("4_wpv8r")]
+position = Vector2(250, 313)
+
+[node name="Pig" parent="GameManger" instance=ExtResource("5_clcp8")]
+position = Vector2(149, 66)
+metadata/_edit_group_ = true
+
+[node name="Pen1" parent="GameManger" instance=ExtResource("6_tt25l")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManger/Pen1"]
+position = Vector2(-745, 141)
+shape = SubResource("RectangleShape2D_ojhds")
+
+[node name="WhiteSheepGoal1" parent="GameManger/Pen1" instance=ExtResource("7_in5fj")]
+position = Vector2(-787, 127)
+
+[node name="Pen2" parent="GameManger" instance=ExtResource("6_tt25l")]
+position = Vector2(989, 305)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManger/Pen2"]
+position = Vector2(-745, 141)
+shape = SubResource("RectangleShape2D_ojhds")
+
+[node name="WhiteSheepGoal1" parent="GameManger/Pen2" instance=ExtResource("7_in5fj")]
+position = Vector2(-787, 127)
+
+[connection signal="all_penned" from="GameManger/Pen1" to="GameManger" method="_on_pen_all_penned"]
+[connection signal="all_penned" from="GameManger/Pen2" to="GameManger" method="_on_pen_all_penned"]
+
+[editable path="GameManger/Pen1"]
+[editable path="GameManger/Pen2"]

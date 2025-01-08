@@ -1,16 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2hjqvj4o2len"]
+[gd_scene load_steps=9 format=3 uid="uid://d2hjqvj4o2len"]
 
 [ext_resource type="PackedScene" uid="uid://ciq1c1hi0lc4w" path="res://Components/GameManager.tscn" id="1_o75bf"]
 [ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="3_11ya5"]
 [ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Animals/WhiteSheep.tscn" id="4_5stld"]
 [ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Animals/Pig.tscn" id="5_f8rnp"]
 [ext_resource type="PackedScene" uid="uid://bsjwfigmjt8xk" path="res://Components/Pen.tscn" id="6_kr7a1"]
+[ext_resource type="PackedScene" uid="uid://b3o4y7jre3svo" path="res://Components/Backgrounds/Grass.tscn" id="7_4k55o"]
 [ext_resource type="PackedScene" uid="uid://b6avromv314w4" path="res://Components/goals/WhiteSheep.tscn" id="7_qmfc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojhds"]
 size = Vector2(302, 42)
 
 [node name="Level1" type="Node2D"]
+
+[node name="Grass" parent="." instance=ExtResource("7_4k55o")]
 
 [node name="GameManger" parent="." instance=ExtResource("1_o75bf")]
 
