@@ -1,20 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvvg4xj00p6j7"]
+[gd_scene load_steps=11 format=4 uid="uid://cvvg4xj00p6j7"]
 
 [ext_resource type="PackedScene" uid="uid://ciq1c1hi0lc4w" path="res://Components/GameManager.tscn" id="1_gnamt"]
+[ext_resource type="TileSet" uid="uid://0dwcjcg6qqt8" path="res://assets/terrain/terain.tres" id="2_gi6a5"]
 [ext_resource type="PackedScene" uid="uid://bxuhf5elr28qc" path="res://Components/Animals/WhiteSheep.tscn" id="2_qjf88"]
 [ext_resource type="PackedScene" uid="uid://b4ifqvdghiu1d" path="res://Components/Animals/Pig.tscn" id="3_kdoj3"]
 [ext_resource type="PackedScene" uid="uid://bsjwfigmjt8xk" path="res://Components/Pen.tscn" id="4_ompjk"]
 [ext_resource type="PackedScene" uid="uid://8jaxsm4mmupk" path="res://Components/Lines.tscn" id="5_u6x7i"]
 [ext_resource type="PackedScene" uid="uid://bv371khncwvtc" path="res://Components/WiggleCam.tscn" id="7_f6grt"]
 [ext_resource type="PackedScene" uid="uid://b6avromv314w4" path="res://Components/goals/WhiteSheep.tscn" id="7_r8dxi"]
-[ext_resource type="PackedScene" uid="uid://b3o4y7jre3svo" path="res://Components/Background.tscn" id="7_tiuoj"]
+[ext_resource type="PackedScene" uid="uid://b3o4y7jre3svo" path="res://Components/Backgrounds/Grass.tscn" id="7_tiuoj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojhds"]
 size = Vector2(302, 42)
 
 [node name="Level1" type="Node2D"]
 
-[node name="Background" parent="." instance=ExtResource("7_tiuoj")]
+[node name="Grass" parent="." instance=ExtResource("7_tiuoj")]
+
+[node name="Fence" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAATAAAAAAAEABYAAAATAAEAAAABABcAAAATAAIAAAABABcAAAATAAMAAAABABcAAAATAAQAAAABABcAAAATAAUAAAABABcAAAATAAYAAAABABcAAAATAAcAAAABABcAAAATAAgAAAABABcAAAATAAkAAAABABcAAAATAAoAAAABABcAAAATAAsAAAABABcAAAATAAwAAAABABcAAAATAA0AAAABABcAAAATAA4AAAABABcAAAATAA8AAAABABcAAAATABAAAAABABcAAAATABEAAAABABcAAAATABIAAAABABcAAAATABMAAAABABcAAAATABQAAAABABcAAAATABUAAAABABcAAAATABYAAAABABcAAAATABcAAAABABcAAAATABgAAAABABcAAAATABkAAAABABcAAAATABoAAAABABcAAAATABsAAAABABcAAAATABwAAAABABcAAAATAB0AAAAFABQAAAAAAAAAAAABABYAAAABAAAAAAABABUAAAACAAAAAAADABQAAAADAAAAAAABABUAAAAEAAAAAAADABQAAAAFAAAAAAACABYAAAAGAAAAAAABABUAAAAHAAAAAAABABUAAAAIAAAAAAADABQAAAAJAAAAAAADABQAAAAKAAAAAAADABQAAAALAAAAAAABABUAAAAMAAAAAAABABUAAAANAAAAAAADABQAAAAOAAAAAAABABUAAAAPAAAAAAADABQAAAAQAAAAAAABABUAAAARAAAAAAADABQAAAASAAAAAAADABQAAAAAAB0AAAACABQAAAAAABwAAAABABcAAAAAABsAAAABABcAAAAAABoAAAABABcAAAAAABkAAAABABcAAAAAABgAAAABABcAAAAAABcAAAABABcAAAAAABYAAAABABcAAAAAABUAAAABABcAAAAAABQAAAABABcAAAAAABMAAAABABcAAAAAABIAAAABABcAAAAAABEAAAABABcAAAAAABAAAAABABcAAAAAAA8AAAABABcAAAAAAA4AAAABABcAAAAAAA0AAAABABcAAAAAAAwAAAABABcAAAAAAAsAAAABABcAAAAAAAoAAAABABcAAAAAAAkAAAABABcAAAAAAAgAAAABABcAAAAAAAcAAAABABcAAAAAAAYAAAABABcAAAAAAAUAAAABABcAAAAAAAQAAAABABcAAAAAAAMAAAABABcAAAAAAAIAAAABABcAAAAAAAEAAAABABcAAAASAB0AAAADABQAAAARAB0AAAADABQAAAAQAB0AAAADABQAAAAPAB0AAAADABQAAAAOAB0AAAABABUAAAANAB0AAAABABUAAAAMAB0AAAABABUAAAALAB0AAAADABQAAAAKAB0AAAABABUAAAAJAB0AAAADABQAAAAIAB0AAAADABQAAAAHAB0AAAADABQAAAAGAB0AAAADABQAAAAFAB0AAAADABQAAAAEAB0AAAABABUAAAADAB0AAAADABQAAAACAB0AAAABABUAAAABAB0AAAADABQAAAA=")
+tile_set = ExtResource("2_gi6a5")
 
 [node name="GameManger" parent="." instance=ExtResource("1_gnamt")]
 
